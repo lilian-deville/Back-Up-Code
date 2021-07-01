@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="src/style.css" />
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/93fd0dbb52.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather the Weather</title>
+  </head>
+  <body>
+    <form>
+      <input id="cityentry" type="text" placeholder="Where in the world to go?" autofocus="on" />
+      <input id = "cityentryinput" type="submit" value="Go" />
+    <span>
+      Favourite Spots
+      <button id="starone">⭐GC</button>
+      <button id="startwo">⭐Jena</button>
+    </span></form>
+  <container> 
+  <h1>In Eulenbis</h1> 
+  <ul>
+     <li id="currentDayTime"></li>
+     <li class="currenttemp">Currently 21 
+       <span class="temp-units"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
+     <li class="feels"> Feels Like 18º</li></ul>
+    </container>
+    <div class="card-groupfeatures">    
+<div class="card" style="width: 9rem;">
+  <img src="src/images/umbrella.png" class="card-img-top" alt="...">
+  <div class="feature">Rainfall 20% ∓10%</div>
+</div>
+<div class="card" style="width: 9rem;">
+   <img src="src/images/wind.png" class="card-img-top" alt="...">
+  <div class="feature">Wind 10km/hr</div>
+
+</div><div class="card" style="width: 9rem;">
+  <img src="src/images/uv.png" class="card-img-top" alt="...">
+  <div class="feature">UV Index 8</div>
+
+</div><div class="card" style="width: 9rem;">
+  <img src="src/images/humidity.png" class="card-img-top" alt="...">
+  <div class="feature">Humidity 42% ∓5%</div> 
+</div><div class="card" style="width: 9rem;">
+  <img src="src/images/dandelion.png" class="card-img-top" alt="...">
+  <div class="feature">Pollen Rating Low</div>
+</div>
+</div> 
+</div>
+
+      <h3>Daily Tip!</h3> <p class="todaytip">Wear 50 SPF UVB and UVA sunscreen! 😉</p>
+<h4>Plan Ahead</h4>
+<div class="card-group">
+<div class="card" style="width: 15rem;">
+  <img src="src/images/sunshine.png" class="forecastcard" alt="...">
+  <div class="Day">Monday</div>
+  <div class="card-body">
+    <p class="outlooktemperature">13-27º</p>
+  </div>
+</div>
+<div class="card" style="width: 15rem;">
+  <img src="src/images/partsun.jpg" class="forecastcard" alt="...">
+  <div class="Day">Tuesday</div>
+  <div class="card-body">
+    <p class="outlooktemperature">10-18º</p>
+  </div>
+</div>
+<div class="card" style="width: 15rem;">
+  <img src="src/images/wind.jpg" class="forecastcard" alt="...">
+  <div class="Day">Wednesday</div>
+  <div class="card-body">
+    <p class="outlooktemperature">10-18º</p>
+  </div>
+</div>
+<div class="card" style="width: 15rem;">
+  <img src="src/images/cloudy.png" class="forecastcard" alt="...">
+  <div class="Day">Thursday</div>
+  <div class="card-body">
+    <p class="outlooktemperature">2-12º</p>
+  </div>
+</div>
+<div class="card" style="width: 15rem;">
+  <img src="src/images/snow.jpg" class="forecastcard"alt="...">
+  <div class="Day">Friday</div>
+  <div class="card-body">
+    <div class="outlooktemperature">-5-10º</div>
+  </div>
+</div>
+</div>
+    </p>
+    <div class="row weekdays">
+        <div class="col-2">Mon </div>
+        <div class="col-2">Tues</div>
+        <div class="col-2">Wed </div>
+        <div class="col-2">Thurs </div>
+        <div class="col-2">Fri </div>
+        <div class="col-2">Sat </div>
+      </div>
+      
+      <div class="row week-emojis">
+        <div class="col-2"> <i class="fas fa-cloud-sun"></i></div>
+        <div class="col-2"> <i class="fas fa-cloud-sun-rain"></i></div>
+        <div class="col-2"> <i class="fas fa-cloud-showers-heavy"></i> </div>
+        <div class="col-2"> <i class="fas fa-cloud-showers-heavy"></i></div>
+        <div class="col-2"> <i class="fas fa-sun"></i> </div>
+        <div class="col-2"> <i class="fas fa-sun"></i> </div>
+      </div>
+      
+      <div class="row week-temp">
+        <div class="col-2"> 68° 45°</div>
+        <div class="col-2"> 71° 55°</div>
+        <div class="col-2"> 78° 54°</div>
+        <div class="col-2"> 80° 60°</div>
+        <div class="col-2"> 82° 63°</div>
+        <div class="col-2"> 81° 60°</div>
+      </div>
+      
+      <div class="row">
+        <div class="col-2"> <i class="fas fa-caret-up"></i>  <i class="fas fa-caret-down"></i></div>
+        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
+        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
+        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
+        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
+        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
+      </div>
+      
+ <br/>
+    <div><a href = "http://github.com/lilian-deville/Back-Up-Code" target="_blank" id=codesourcelink> Open-sourced code</a> by Lisa Hung</em></div>
+  
+  </p>
+  <script src="src/script.js"></script>
+  </body>
+</html>
+
