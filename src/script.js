@@ -9,11 +9,17 @@ function displayCurrent() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[now.getDay()];
   let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = now.getUTCMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let formatDate = `${day}, ${hours}:${minutes}`;
   document.getElementById("currentDayTime").innerHTML = formatDate;
 }
