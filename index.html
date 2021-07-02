@@ -13,7 +13,7 @@
     <title>Weather the Weather</title>
   </head>
   <body>
-    <form>
+    <form id='searchForm'>
       <input id="cityentry" type="text" placeholder="Where in the world to go?" autofocus="on" />
       <input id = "cityentryinput" type="submit" value="Go" />
     <span>
@@ -54,45 +54,7 @@
 
       <h3>Daily Tip!</h3> <p class="todaytip">Wear 50 SPF UVB and UVA sunscreen! 😉</p>
 <h4>Plan Ahead</h4>
-<div class="card-group">
-<div class="card" style="width: 15rem;">
-  <img src="src/images/sunshine.png" class="forecastcard" alt="...">
-  <div class="Day">Monday</div>
-  <div class="card-body">
-    <p class="outlooktemperature">13-27º</p>
-  </div>
-</div>
-<div class="card" style="width: 15rem;">
-  <img src="src/images/partsun.jpg" class="forecastcard" alt="...">
-  <div class="Day">Tuesday</div>
-  <div class="card-body">
-    <p class="outlooktemperature">10-18º</p>
-  </div>
-</div>
-<div class="card" style="width: 15rem;">
-  <img src="src/images/wind.jpg" class="forecastcard" alt="...">
-  <div class="Day">Wednesday</div>
-  <div class="card-body">
-    <p class="outlooktemperature">10-18º</p>
-  </div>
-</div>
-<div class="card" style="width: 15rem;">
-  <img src="src/images/cloudy.png" class="forecastcard" alt="...">
-  <div class="Day">Thursday</div>
-  <div class="card-body">
-    <p class="outlooktemperature">2-12º</p>
-  </div>
-</div>
-<div class="card" style="width: 15rem;">
-  <img src="src/images/snow.jpg" class="forecastcard"alt="...">
-  <div class="Day">Friday</div>
-  <div class="card-body">
-    <div class="outlooktemperature">-5-10º</div>
-  </div>
-</div>
-</div>
-    </p>
-    <div class="row weekdays">
+    <div class="row weekdays" id="weekdays">
         <div class="col-2">Mon </div>
         <div class="col-2">Tues</div>
         <div class="col-2">Wed </div>
@@ -101,7 +63,7 @@
         <div class="col-2">Sat </div>
       </div>
       
-      <div class="row week-emojis">
+      <div class="row week-emojis" id="week-emojis">
         <div class="col-2"> <i class="fas fa-cloud-sun"></i></div>
         <div class="col-2"> <i class="fas fa-cloud-sun-rain"></i></div>
         <div class="col-2"> <i class="fas fa-cloud-showers-heavy"></i> </div>
@@ -110,13 +72,13 @@
         <div class="col-2"> <i class="fas fa-sun"></i> </div>
       </div>
       
-      <div class="row week-temp">
-        <div class="col-2"> 68° 45°</div>
-        <div class="col-2"> 71° 55°</div>
-        <div class="col-2"> 78° 54°</div>
-        <div class="col-2"> 80° 60°</div>
-        <div class="col-2"> 82° 63°</div>
-        <div class="col-2"> 81° 60°</div>
+      <div class="row week-temp" id="week-temp">
+        <div class="col-2"> 10° 23°</div>
+        <div class="col-2"> 15° 29°</div>
+        <div class="col-2"> 10° 25°</div>
+        <div class="col-2"> 5° 15°</div>
+        <div class="col-2"> -2° 9°</div>
+        <div class="col-2"> -10° 5°</div>
       </div>
       
       <div class="row">

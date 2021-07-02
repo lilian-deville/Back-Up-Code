@@ -2,6 +2,8 @@ body {
   font-family: sans-serif;
   padding: 0 20px;
   font-family: "Quicksand", sans-serif;
+  background-image: url("../../Back-Up-Code/src/images/morningsunrise.jpg");
+  background-repeat: no-repeat;
 }
 
 img {
@@ -15,7 +17,7 @@ h2,
 h3,
 h4,
 form {
-  color: #231d3c;
+  color: #fff;
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
 }
@@ -26,6 +28,10 @@ h1 {
   font-size: 36px;
   line-height: 48px;
   padding: 20px;
+}
+ul {
+  list-style: none;
+  color: #fff;
 }
 span,
 button {
@@ -50,7 +56,8 @@ div {
 }
 button:hover {
   cursor: pointer;
-  background: #5e41a7;
+  background: #fff;
+  color: black;
 }
 .morningsunrise {
   font-size: 400px;
@@ -81,4 +88,13 @@ button:hover {
 }
 .card-group {
   width: 30rem;
+}
+.week-emojis {
+  color: #fff;
+}
+.weekdays {
+  color: #fff;
+}
+.week-temp {
+  color: #fff;
 }
