@@ -1,6 +1,6 @@
 //Feature #1 display the current date and time using JavaScript: Tuesday 16:00
 
-function displayCurrent() {
+function displayCurrentDay() {
   let now = new Date();
   let days = [
     "Sunday",
@@ -22,8 +22,18 @@ function displayCurrent() {
   }
   return `${day}, ${hours}:${minutes}`;
 }
-let nowElement = document.querySelector("#currentDayTime");
-nowElement.innerHTML = displayCurrent();
+let dateElement = document.querySelector("#currentDayTime");
+let currentTime = new Date();
+dateElement.innerHTML = displayCurrentDay(currentTime);
+
+function handle(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#cityentry");
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = cityInput.value;
+}
+let search = document.querySelector("form");
+search.addEventListener("submit", handle);
 
 function getTemp(response) {
   console.log(response);
@@ -36,14 +46,6 @@ function getTemp(response) {
 
 //Feature #2 Add a search engine, when searching for a city (i.e. Paris), //
 //display the city name on the page after the user submits the form.//
-function handle(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#cityentry");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = cityInput.value;
-}
-let search = document.querySelector("form");
-search.addEventListener("submit", handle);
 
 //get from week 7//
 
@@ -76,14 +78,30 @@ function showPosition() {
 }
 
 let location = document.querySelector("#current-location");
-location.addEventListener("click", showPosition);
+location.addEventListener("subm", showPosition);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let FahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(FahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement = Math.round(celsiusTemperature);
+}
 
 //new code to sort//
 
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySlectory("#city");
+  let cityElement = document.querySlectory("#currentLocation);
   let descriptionElement = document.querySlectory("#description");
   let humidityElement = document.querySlectory("#humidity");
   let windElement = document.querySlectory("#wind");
@@ -117,23 +135,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.vale);
 }
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let FahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(FahrenheitTemperature);
-}
-function displayCelsiusTemperature(event) {
-  event.preventDefault;
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement = Math.round(celsiusTemperature);
-}
-
 search("New York");
 
 let celsius = document.querySelector("#celsius-link");

@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather the Weather</title>
   </head>
-  <body>
-    <div id="background" <img src="src/images/morningsunrise.jpg" alt="background-image">
-        
+  <body>        
     <form id='searchForm'>
       <input id="cityentry" type="text" placeholder="Where in the world to go?" autofocus="on" />
       <input id="cityentryinput" type="submit" value="Go" />
@@ -26,11 +24,11 @@
         <button id="startwo">⭐Jena</button>
       </span>
   <container> 
-  <h1 id="currentLocation">In Eulenbis</h1> 
+  <h1 >In <span id="currentLocation">Eulenbis</span></h1> 
   <ul>
      <li id="currentDayTime"></li>
-     <li class="currenttemp">Currently 21 
-       <span class="temp-units"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
+     <li class="currenttemp">Currently 
+       <span class="temperature"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
      <li class="feels"> Feels Like 18º</li></ul>
     </container>
     <div class="more-features"> 
