@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   padding: 0 20px;
   font-family: "Quicksand", sans-serif;
+  margin-top: 20px auto;
 }
 
 img {
@@ -38,16 +39,16 @@ button {
 }
 button {
   border-radius: 25px;
-  border: 1px solid 000000;
+  border: 1px solid opaque;
   font-size: 16px;
   display: inline;
-  margin: 0 auto;
   line-height: 22px;
   padding: 8px 12px;
   text-decoration: none;
   transition: all 200ms ease;
   box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
   font-weight: 400;
+  color: opacity 0.2;
 }
 div {
   display: block;
@@ -96,5 +97,8 @@ button:hover {
   color: #fff;
 }
 .week-temp {
+  color: #fff;
+}
+.todaytip {
   color: #fff;
 }

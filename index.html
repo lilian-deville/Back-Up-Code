@@ -13,24 +13,22 @@
     <title>Weather the Weather</title>
   </head>
   <body>
-    <div img src="src/images/morningsunrise.jpg" alt="background" class="background-image">
+    <div class="background-image">
        
     <form id='searchForm'>
       <input id="cityentry" type="text" placeholder="Where in the world to go?" autofocus="on" />
       <input id="cityentryinput" type="submit" value="Go" />
-      
-    </form>
-      <span>
+    </form><span>
         Favourite Spots
         <button id="starone">⭐GC</button>
         <button id="startwo">⭐Jena</button>
       </span>
   <container> 
-  <h1 >In <span id="currentLocation">Eulenbis</span></h1> 
+  <h1 >In <span id="inputLocation">Eulenbis</span></h1> 
   <ul>
      <li id="currentDayTime"></li>
      <li class="currenttemp">Currently 
-       <span class="temperature"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
+       <span id="temperature"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
      <li class="feels"> Feels Like 18º</li></ul>
     </container>
     <div class="more-features"> 
@@ -40,7 +38,7 @@
         <li id="humidity">Humidity 42% ∓5%</li> 
       </ul>   
 
-      <h3>Daily Tip!</h3> <p class="todaytip">Wear 50 SPF UVB and UVA sunscreen! 😉</p>
+      <h3>Quote of the Day</h3> <p class="todaytip">Insert something wise! 😉</p>
 <h4>Plan Ahead</h4>
     <div class="row weekdays" id="weekdays">
         <div class="col-2">Mon </div>
@@ -69,14 +67,6 @@
         <div class="col-2"> -10° 5°</div>
       </div>
       
-      <div class="row">
-        <div class="col-2"> <i class="fas fa-caret-up"></i>  <i class="fas fa-caret-down"></i></div>
-        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
-        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
-        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
-        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
-        <div class="col-2"> <i class="fas fa-caret-up"></i> <i class="fas fa-caret-down"></i></div>
-      </div>
     </div>   
     </div>   
  <br/>
