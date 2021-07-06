@@ -25,15 +25,6 @@ function displayCurrent() {
 let nowElement = document.querySelector("#currentDayTime");
 nowElement.innerHTML = displayCurrent();
 
-function getTemp(response) {
-  console.log(response);
-  let cityInputNew = document.querySelector("#currentLocation");
-  let city = response.data.name;
-  cityInputNew.innerHTML = `${city}`;
-  let temperature = document.querySelector(".currenttemp");
-  temperature.innerHTML = Math.round(response.data.main.temp);
-}
-
 //Feature #2 Add a search engine, when searching for a city (i.e. Paris), //
 //display the city name on the page after the user submits the form.//
 function handle(event) {
@@ -45,9 +36,38 @@ function handle(event) {
 let search = document.querySelector("form");
 search.addEventListener("submit", handle);
 
-//get from week 7//
+//
+//Bonus Feature: Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit.
+//When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.//
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  temperatureElement.innerHTML = 80;
+}
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", convertToFahrenheit);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 21;
+}
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", convertToCelsius);
 
 //Week 5: when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.//
+function getTemp(response) {
+  let cityInputNew = document.querySelector("#currentLocation");
+  let city = response.data.name;
+  cityInputNew.innerHTML = `${city.value}`;
+
+  let temperature = document.querySelector(".currenttemp");
+  temperature.innerHTML = Math.round(response.data.main.temp);
+}
+console.log(getTemp);
 
 function displayInputTemp(event) {
   event.preventDefault();
@@ -78,6 +98,7 @@ function showPosition() {
 let location = document.querySelector("#current-location");
 location.addEventListener("click", showPosition);
 
+//Week 5 bonus:Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.//
 //new code to sort//
 
 function displayTemperature(response) {
@@ -135,9 +156,6 @@ function displayCelsiusTemperature(event) {
 }
 
 search("New York");
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemperature = null;
 

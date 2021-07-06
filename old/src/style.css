@@ -1,0 +1,100 @@
+body {
+  font-family: sans-serif;
+  padding: 0 20px;
+  font-family: "Quicksand", sans-serif;
+  background-image: url("../../Back-Up-Code/src/images/morningsunrise.jpg");
+  background-repeat: no-repeat;
+}
+
+img {
+  max-width: 50%;
+  margin: 0 auto;
+  display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+form {
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  text-align: left;
+  margin: 0;
+  font-size: 36px;
+  line-height: 48px;
+  padding: 20px;
+}
+ul {
+  list-style: none;
+  color: #fff;
+}
+span,
+button {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+button {
+  border-radius: 25px;
+  border: 1px solid 000000;
+  font-size: 16px;
+  display: inline;
+  margin: 0 auto;
+  line-height: 22px;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  font-weight: 400;
+}
+div {
+  display: block;
+}
+button:hover {
+  cursor: pointer;
+  background: #fff;
+  color: black;
+}
+.morningsunrise {
+  font-size: 400px;
+}
+.todaytemperature .todayfeelstemperature {
+  position: static;
+}
+.todayrainfall {
+  display: block;
+  position: static;
+  top: 10;
+  right: 600;
+}
+.card-groupfeatures {
+  display: inline;
+  position: static;
+  left: 1200px;
+}
+.Day {
+  font-weight: 600;
+}
+.forecastcard {
+  display: inline;
+  font-size: 400;
+}
+.todaytemperature {
+  font-size: 600;
+}
+.card-group {
+  width: 30rem;
+}
+.week-emojis {
+  color: #fff;
+}
+.weekdays {
+  color: #fff;
+}
+.week-temp {
+  color: #fff;
+}
