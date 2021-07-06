@@ -1,5 +1,5 @@
 function displayCurrent() {
-  let now = new Date();
+  console.log("Suprise");
   let days = [
     "Sunday",
     "Monday",
@@ -9,6 +9,8 @@ function displayCurrent() {
     "Friday",
     "Saturday",
   ];
+  console.log(days);
+  let now = new Date();
   let day = days[now.getDay()];
   let hours = now.getHours();
   if (hours < 10) {
