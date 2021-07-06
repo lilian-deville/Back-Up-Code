@@ -2,8 +2,6 @@ body {
   font-family: sans-serif;
   padding: 0 20px;
   font-family: "Quicksand", sans-serif;
-  background-image: url("../../Back-Up-Code/src/images/morningsunrise.jpg");
-  background-repeat: no-repeat;
 }
 
 img {
@@ -59,8 +57,10 @@ button:hover {
   background: #fff;
   color: black;
 }
-.morningsunrise {
-  font-size: 400px;
+.background-image {
+  background-color: cornflowerblue;
+  background-repeat: no-repeat;
+  border-radius: 30px;
 }
 .todaytemperature .todayfeelstemperature {
   position: static;
