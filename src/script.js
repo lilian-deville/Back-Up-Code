@@ -85,7 +85,6 @@ function displayCelsiusTemperature(event) {
 
 function displayTemperature(response) {
   console.log(response.data);
-  let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -94,7 +93,6 @@ function displayTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -104,18 +102,15 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`
   );
   iconElement.setAttributeNS("alt", response.data.weather[0].description);
-
-  let celsius = document.querySelector("#celsius-link");
-  celsius.addEventListener("click", convertToCelsius);
-
-  let celsiusTemperature = null;
-
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.addEventListener("click", displayCelsiusTemperature);
 }
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function search(city) {
   let apiKey = "be9debd96f41247fd5df628d8a693a73";
@@ -126,10 +121,11 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
+  let cityInputElement = document.querySelector("#cityentry");
   search(cityInputElement.value);
-  search("New York");
-
-  let form = document.querySelector("#search-form");
-  form.addEventListener("submit", handleSubmit);
 }
+
+let form = document.querySelector("#searchForm");
+form.addEventListener("submit", handleSubmit);
+
+search("New York");

@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-5">
     <form id="searchForm"class="mt-3">
-      <input id="cityentry" type="text" class="mt-3" placeholder="Where in the world to go?" autofocus="on" class="form-control"/>
+      <input id="cityentry" type="text" placeholder="Where in the world to go?" autofocus="on" class="form-control mt-3"/>
       </div>
       <div class="col-2">   
       <input type="submit" value="Go" class="btn btn-primary w-100 mt-3"/>
@@ -38,23 +38,27 @@
     <div class="col-4">
   <ul>
      <li id="currentDayTime"></li>
-     <li class="currenttemp">Currently 
-       <div id="temperature"></div> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a> </li>
-     <li class="feels"> Feels Like 18º</li></ul>
+    
+       <div id="temperature"  class="float-left"></div> 
+       <div class="float-left">
+       <a href="#" id="celsius-link">°C</a>
+        <small>| </small> <a href="#" id="fahrenheit-link">°F</a> 
     </div>
-    <div class="col-4" id="weatherImage">
+    <br/>
+        <li id="description"> Feels Like a nice day!</li></ul>
+    </div>
+    <div class="col-4"> <img src="" alt="Clear" id="icon">
       
       </div>
     <div class="col-4">
-    <div class="more-features"> 
       <ul>
-        <li id="rainfall">Rainfall 20% ∓10%</li> 
-        <li id="wind">Wind 10km/hr</li> 
-        <li id="humidity">Humidity 42% ∓5%</li> 
-        
+        <li>Rainfall:<span id="rainfall"></span>%</li> 
+        <li>Wind:<span id="wind"></span>km/hr</li> 
+        <li>Humidity:<span id="humidity"></span>%</li>  
       </ul> 
       </div>  
       </div>
+    </div>
     </div>
     <h2 id="quoteTitle">Quote of the Day</h2>
     <div class="todaytip">Insert something wise! 😉 </div>
@@ -89,6 +93,7 @@
     </div>   
     </div> 
     </div>  
+    </div>
     <div><a href = "http://github.com/lilian-deville/Back-Up-Code" target="_blank" id=codesourcelink> Open-sourced code</a> by Lisa Hung</em></div>
   
   </p>
