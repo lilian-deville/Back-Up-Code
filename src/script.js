@@ -11,7 +11,7 @@ function displayCurrent() {
   ];
   console.log(days);
   let now = new Date();
-  let day = days[now.getDay()];
+  let weekday = days[now.getDay()];
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -20,9 +20,9 @@ function displayCurrent() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  let formatDate = `${weekday}, ${hours}:${minutes}`;
+  document.getElementById("currentDayTime").innerHTML = formatDate;
 }
-let formatDate = `${day}, ${hours}:${minutes}`;
-document.getElementById("currentDayTime").innerHTML = formatDate;
 
 //
 function getTemp(response) {
@@ -62,8 +62,8 @@ function showPosition() {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
-let location = document.querySelector("#inputlocation");
-location.addEventListener("submit", showPosition);
+let inputLocation = document.querySelector("#cityentry");
+inputLocation.addEventListener("submit", showPosition);
 //up to here no console errors//
 
 function displayFahrenheitTemperature(event) {
