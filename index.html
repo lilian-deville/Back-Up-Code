@@ -24,30 +24,42 @@
       <input type="submit" value="Go" class="btn btn-primary w-100 mt-3"/>
       </div>
     </form>
-<div class="col-5 mt-3">
+<div class="col-5 mt-3 favourites">
         Favourite Spots
-        <button id="starone">⭐GC</button>
-        <button id="startwo">⭐Jena</button>
+        <button id="starone" class="btn btn-primary">⭐Here</button>
+        <button id="startwo" class="btn btn-primary">⭐GC</button>
+        <button id="starthree" class="btn btn-primary">⭐Jena</button>
       </div>
       </div>
       
-  <container> 
+  
   <h1 >In <span id="inputLocation">Eulenbis</span></h1> 
+  <div class="row">
+    <div class="col-4">
   <ul>
      <li id="currentDayTime"></li>
      <li class="currenttemp">Currently 
-       <span id="temperature"> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a>  </span></li>
+       <div id="temperature"></div> <a href="#" id="celsius-link">°C</a> <small>| </small> <a href="#" id="fahrenheit-link">°F</a> </li>
      <li class="feels"> Feels Like 18º</li></ul>
-    </container>
+    </div>
+    <div class="col-4" id="weatherImage">
+      
+      </div>
+    <div class="col-4">
     <div class="more-features"> 
       <ul>
         <li id="rainfall">Rainfall 20% ∓10%</li> 
         <li id="wind">Wind 10km/hr</li> 
         <li id="humidity">Humidity 42% ∓5%</li> 
-      </ul>   
-
-      <h3>Quote of the Day</h3> <p class="todaytip">Insert something wise! 😉</p>
-<h4>Plan Ahead</h4>
+        
+      </ul> 
+      </div>  
+      </div>
+    </div>
+    <h2 id="quoteTitle">Quote of the Day</h2>
+    <div class="todaytip">Insert something wise! 😉 </div>
+<h3>Plan Ahead</h3>
+<div class ="forecast">
     <div class="row weekdays" id="weekdays">
         <div class="col-2">Mon </div>
         <div class="col-2">Tues</div>
@@ -74,10 +86,9 @@
         <div class="col-2"> -2° 9°</div>
         <div class="col-2"> -10° 5°</div>
       </div>
-      
     </div>   
-    </div>   
- <br/>
+    </div> 
+    </div>  
     <div><a href = "http://github.com/lilian-deville/Back-Up-Code" target="_blank" id=codesourcelink> Open-sourced code</a> by Lisa Hung</em></div>
   
   </p>
