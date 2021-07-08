@@ -1,5 +1,4 @@
 function displayCurrent() {
-  console.log("Suprise");
   let days = [
     "Sunday",
     "Monday",
@@ -9,7 +8,7 @@ function displayCurrent() {
     "Friday",
     "Saturday",
   ];
-  console.log(days);
+  console.log(displayCurrent[days]);
   let now = new Date();
   let weekday = days[now.getDay()];
   let hours = now.getHours();
@@ -54,20 +53,20 @@ function currentPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "bddc5a8545983fb2fb2516d2150a111f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(getTemp);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(getTemp);
 }
 
 function showPosition() {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
-let inputLocation = document.querySelector("#cityentry");
+let inputLocation = document.querySelector("#gpslocation");
 inputLocation.addEventListener("submit", showPosition);
 //up to here no console errors//
 
 function displayFahrenheitTemperature(event) {
-  console.log(event);
+  console.log(event.data);
   event.preventDefault();
   let FahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   celsiusLink.classList.remove("active");
@@ -85,14 +84,14 @@ function displayCelsiusTemperature(event) {
 
 function displayTemperature(response) {
   console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   celsiusTemperature = response.data.main.temp;
-
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -102,20 +101,17 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`
   );
   iconElement.setAttributeNS("alt", response.data.weather[0].description);
+  let celsius = document.querySelector("#celsius-link");
+  celsius.addEventListener("click", convertToCelsius);
+  let celsiusTemperature = null;
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", displayCelsiusTemperature);
 }
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 function search(city) {
   let apiKey = "be9debd96f41247fd5df628d8a693a73";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?id=Sydney&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayTemperature);
 }
 
